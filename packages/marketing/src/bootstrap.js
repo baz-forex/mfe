@@ -4,10 +4,10 @@ import { createMemoryHistory } from 'history'
 import App from './App'
 
 // Mount function to start up the app
-const mount = (el, { onNavigate }) => {
+const mount = (el) => {
 	const history = createMemoryHistory()
 
-	history.listen(onNavigate)
+	// history.listen(onNavigate)
 
 	ReactDOM.render(
 		<App history={history} />,
@@ -21,11 +21,7 @@ if (process.env.NODE_ENV === 'development') {
 	const devRoot = document.querySelector('#_marketing-dev-root')
 
 	if (devRoot) {
-		mount(devRoot, {
-			onNavigate: () => {
-				console.log('The dev instance noticed navigation in Marketing')
-			}
-		})
+		mount(devRoot)
 	}
 }
 
