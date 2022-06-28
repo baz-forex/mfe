@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import { Switch, Route, BrowserRouter,  } from 'react-router-dom'
 import { StylesProvider, createGenerateClassName } from '@material-ui/core/styles'
 
 import Landing from './components/Landing'
@@ -10,7 +10,8 @@ const generateClassName = createGenerateClassName({
 	productionPrefix: 'ma'
 })
 
-export default () => {
+// export default ({ history }) => {
+export default ({ history }) => {
 	return <div>
 		<StylesProvider generateClassName={generateClassName}>
 			<BrowserRouter>
