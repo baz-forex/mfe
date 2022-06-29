@@ -8,20 +8,20 @@ const devConfig = {
 	mode: 'development',
 	devServer: {
 		port: 8081,
-		/*historyApiFallback: {
+		/* historyApiFallback: {
 			index: 'index.html'
-		}*/
+		} */
 		historyApiFallback: true
 	},
 	plugins: [
 		new ModuleFederationPlugin({
-			name: 'my_marketing',
+			name: 'marketing',
 			filename: 'remoteEntry.js',
 			exposes: {
 				'./MarketingApp': './src/bootstrap'
 			},
-			// shared: packageJson.dependencies
-			shared: ['react', 'react-dom']
+			shared: packageJson.dependencies
+			// shared: ['react', 'react-dom']
 		}),
 		new HtmlWebpackPlugin({
 			template: './public/index.html'
