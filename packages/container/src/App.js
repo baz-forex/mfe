@@ -3,12 +3,12 @@ import { Router, BrowserRouter, Route, Switch, Redirect } from 'react-router-dom
 import { StylesProvider, createGenerateClassName } from "@material-ui/core/styles"
 import { createBrowserHistory } from 'history'
 
-// import MarketingApp from './components/MarketingApp'
-// import AuthApp from './components/AuthApp'
 import Header from './components/Header'
 import ProgressBar from './components/Progress'
 
+// import MarketingApp from './components/MarketingApp'
 const MarketingLazy = lazy(() => import('./components/MarketingApp'))
+// import AuthApp from './components/AuthApp'
 const AuthLazy = lazy(() => import('./components/AuthApp'))
 const DashboardLazy = lazy(() => import('./components/DashboardApp'))
 
@@ -20,7 +20,7 @@ const history = createBrowserHistory()
 
 export default () => {
 	const [isSignedIn, setIsSignedIn] = useState(false)
-	console.log(isSignedIn);
+	console.log(isSignedIn)
 
 	useEffect(() => {
 		if (isSignedIn)
